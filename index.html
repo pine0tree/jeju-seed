@@ -27,30 +27,20 @@
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
 
-  /* poster placeholder */
-  .poster {
-    width: 100%; height: 220px; border-radius: var(--radius);
-    background: linear-gradient(135deg, #d4ede5 0%, #e8f5f0 100%);
-    border: 1.5px dashed #a8d9c6;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 8px; margin-bottom: 2.5rem; color: #7bbda8; font-size: 14px;
-  }
-  .poster svg { width: 36px; height: 36px; stroke: #7bbda8; fill: none; stroke-width: 1.5; }
-
   /* header */
   .badge {
     display: inline-flex; align-items: center; gap: 6px;
-    font-size: 12px; font-weight: 600; padding: 4px 12px;
+    font-size: 16px; font-weight: 600; padding: 4px 12px;
     border-radius: 20px; background: var(--green-light); color: var(--green-dark);
     margin-bottom: 14px; letter-spacing: 0.02em;
   }
-  h1 { font-size: 28px; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
-  .lead { font-size: 15px; color: var(--text-sub); margin-bottom: 2rem; }
+  h1 { font-size: 30px; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+  .lead { font-size: 17px; color: var(--text-sub); margin-bottom: 2rem; }
 
   /* CTA */
   .cta-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 2.5rem; flex-wrap: wrap; }
@@ -58,26 +48,26 @@
     display: inline-flex; align-items: center; gap: 7px;
     padding: 11px 24px; border-radius: var(--radius-sm);
     background: var(--green); color: #fff;
-    font-size: 14px; font-weight: 600; text-decoration: none;
+    font-size: 16px; font-weight: 600; text-decoration: none;
     transition: background 0.15s, transform 0.1s;
   }
   .btn:hover { background: var(--green-dark); transform: translateY(-1px); }
   .btn svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.5; }
-  .deadline { font-size: 13px; color: var(--text-muted); }
+  .deadline { font-size: 15px; color: var(--text-muted); }
   .deadline strong { color: var(--text); }
 
   /* metrics */
   .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2.5rem; }
   .metric { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.1rem; }
-  .metric-label { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; font-weight: 500; letter-spacing: 0.04em; }
-  .metric-value { font-size: 18px; font-weight: 600; color: var(--text); }
+  .metric-label { font-size: 13px; color: var(--text-muted); margin-bottom: 5px; font-weight: 500; letter-spacing: 0.04em; }
+  .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
 
   hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
   /* section */
   .section { margin-bottom: 2.5rem; }
   .sec-title {
-    font-size: 11px; font-weight: 600; color: var(--text-muted);
+    font-size: 13px; font-weight: 600; color: var(--text-muted);
     text-transform: uppercase; letter-spacing: 0.08em;
     margin-bottom: 1rem; padding-bottom: 8px;
     border-bottom: 1px solid var(--border);
@@ -86,18 +76,18 @@
   /* info grid */
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .info-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
-  .info-key { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; font-weight: 500; }
-  .info-val { font-size: 13px; font-weight: 600; }
+  .info-key { font-size: 13px; color: var(--text-muted); margin-bottom: 3px; font-weight: 500; }
+  .info-val { font-size: 15px; font-weight: 600; }
 
   /* categories */
   .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .cat-item {
     display: flex; align-items: center; gap: 10px;
     background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
-    padding: 10px 14px; font-size: 13px; font-weight: 500;
+    padding: 10px 14px; font-size: 15px; font-weight: 500;
   }
   .cat-num {
-    font-size: 11px; font-weight: 600; color: var(--green-dark);
+    font-size: 13px; font-weight: 600; color: var(--green-dark);
     background: var(--green-light); padding: 2px 8px; border-radius: 20px; flex-shrink: 0;
   }
 
@@ -105,12 +95,12 @@
   .elig-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
   .elig-list li {
     background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
-    padding: 10px 14px; font-size: 13px; display: flex; gap: 10px; align-items: flex-start;
+    padding: 10px 14px; font-size: 15px; display: flex; gap: 10px; align-items: flex-start;
   }
   .elig-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
   .notice {
     margin-top: 10px; background: #fffbf0; border: 1px solid #f0d98a; border-radius: var(--radius-sm);
-    padding: 10px 14px; font-size: 12px; color: #7a6000;
+    padding: 10px 14px; font-size: 16px; color: #7a6000;
   }
 
   /* timeline */
@@ -124,20 +114,20 @@
     background: var(--green); border: 2px solid var(--bg);
     box-shadow: 0 0 0 1.5px var(--green);
   }
-  .tl-date { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
-  .tl-label { font-size: 14px; font-weight: 600; }
-  .tl-note { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .tl-date { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
+  .tl-label { font-size: 16px; font-weight: 600; }
+  .tl-note { font-size: 16px; color: var(--text-muted); margin-top: 2px; }
 
   /* docs */
   .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .doc-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
-  .doc-card-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .doc-card-title { font-size: 15px; font-weight: 600; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
   .doc-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-  .doc-list li { font-size: 12px; color: var(--text-sub); display: flex; gap: 7px; align-items: baseline; line-height: 1.5; }
+  .doc-list li { font-size: 16px; color: var(--text-sub); display: flex; gap: 7px; align-items: baseline; line-height: 1.5; }
   .doc-list li::before { content: '·'; color: var(--green); font-weight: 700; flex-shrink: 0; }
   .doc-list li.optional { color: var(--text-muted); }
-  .doc-note { margin-top: 10px; font-size: 12px; color: var(--text-muted); }
-  .doc-note code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-family: monospace; color: #333; font-size: 11px; }
+  .doc-note { margin-top: 10px; font-size: 16px; color: var(--text-muted); }
+  .doc-note code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-family: monospace; color: #333; font-size: 13px; }
 
   /* benefits */
   .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
@@ -145,23 +135,23 @@
     background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
     padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start;
   }
-  .benefit-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
-  .benefit-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
-  .benefit-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+  .benefit-icon { font-size: 20px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .benefit-title { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+  .benefit-desc { font-size: 16px; color: var(--text-muted); line-height: 1.5; }
 
   /* contact */
   .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .contact-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
-  .contact-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
-  .contact-val { font-size: 13px; font-weight: 600; }
+  .contact-label { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+  .contact-val { font-size: 15px; font-weight: 600; }
 
   /* footer cta */
   .footer-cta { text-align: center; padding-top: 1rem; }
-  .footer-cta .btn { font-size: 15px; padding: 13px 36px; }
-  .footer-deadline { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+  .footer-cta .btn { font-size: 17px; padding: 13px 36px; }
+  .footer-deadline { font-size: 16px; color: var(--text-muted); margin-top: 10px; }
 
   @media (max-width: 560px) {
-    h1 { font-size: 22px; }
+    h1 { font-size: 24px; }
     .metrics { grid-template-columns: repeat(2, 1fr); }
     .cat-grid, .docs-grid, .benefit-grid, .info-grid, .contact-row { grid-template-columns: 1fr; }
   }
@@ -169,13 +159,6 @@
 </head>
 <body>
 <div class="wrap">
-
-  <!-- poster placeholder -->
-  <div class="poster">
-    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-    포스터 이미지가 여기에 들어갈 예정이에요
-  </div>
-
   <div class="badge">2026 투자사업 모집공고</div>
   <h1>제주창조경제혁신센터<br>Seed Money 투자사업</h1>
   <p class="lead">스타트업 초기 성장단계부터 시리즈까지 — 제주센터가 함께합니다.</p>
