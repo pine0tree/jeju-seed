@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 제주센터 Seed Money 투자사업</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green: #1D9E75;
+    --green-light: #E1F5EE;
+    --green-dark: #0F6E56;
+    --text: #1a1a1a;
+    --text-sub: #555;
+    --text-muted: #888;
+    --border: #e5e5e5;
+    --bg: #f9f9f7;
+    --card: #ffffff;
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+
+  /* poster placeholder */
+  .poster {
+    width: 100%; height: 220px; border-radius: var(--radius);
+    background: linear-gradient(135deg, #d4ede5 0%, #e8f5f0 100%);
+    border: 1.5px dashed #a8d9c6;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; margin-bottom: 2.5rem; color: #7bbda8; font-size: 14px;
+  }
+  .poster svg { width: 36px; height: 36px; stroke: #7bbda8; fill: none; stroke-width: 1.5; }
+
+  /* header */
+  .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; padding: 4px 12px;
+    border-radius: 20px; background: var(--green-light); color: var(--green-dark);
+    margin-bottom: 14px; letter-spacing: 0.02em;
+  }
+  h1 { font-size: 28px; font-weight: 600; line-height: 1.3; margin-bottom: 10px; }
+  .lead { font-size: 15px; color: var(--text-sub); margin-bottom: 2rem; }
+
+  /* CTA */
+  .cta-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 11px 24px; border-radius: var(--radius-sm);
+    background: var(--green); color: #fff;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+  .btn svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.5; }
+  .deadline { font-size: 13px; color: var(--text-muted); }
+  .deadline strong { color: var(--text); }
+
+  /* metrics */
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 2.5rem; }
+  .metric { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem 1.1rem; }
+  .metric-label { font-size: 11px; color: var(--text-muted); margin-bottom: 5px; font-weight: 500; letter-spacing: 0.04em; }
+  .metric-value { font-size: 18px; font-weight: 600; color: var(--text); }
+
+  hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+  /* section */
+  .section { margin-bottom: 2.5rem; }
+  .sec-title {
+    font-size: 11px; font-weight: 600; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 1rem; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* info grid */
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .info-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .info-key { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; font-weight: 500; }
+  .info-val { font-size: 13px; font-weight: 600; }
+
+  /* categories */
+  .cat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .cat-item {
+    display: flex; align-items: center; gap: 10px;
+    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 10px 14px; font-size: 13px; font-weight: 500;
+  }
+  .cat-num {
+    font-size: 11px; font-weight: 600; color: var(--green-dark);
+    background: var(--green-light); padding: 2px 8px; border-radius: 20px; flex-shrink: 0;
+  }
+
+  /* eligibility */
+  .elig-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .elig-list li {
+    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 10px 14px; font-size: 13px; display: flex; gap: 10px; align-items: flex-start;
+  }
+  .elig-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .notice {
+    margin-top: 10px; background: #fffbf0; border: 1px solid #f0d98a; border-radius: var(--radius-sm);
+    padding: 10px 14px; font-size: 12px; color: #7a6000;
+  }
+
+  /* timeline */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 8px; bottom: 8px; width: 1.5px; background: #d0ece4; }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: -24px; top: 5px;
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--green); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 1.5px var(--green);
+  }
+  .tl-date { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-bottom: 2px; }
+  .tl-label { font-size: 14px; font-weight: 600; }
+  .tl-note { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* docs */
+  .docs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .doc-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
+  .doc-card-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .doc-list { list-style: none; display: flex; flex-direction: column; gap: 5px; }
+  .doc-list li { font-size: 12px; color: var(--text-sub); display: flex; gap: 7px; align-items: baseline; line-height: 1.5; }
+  .doc-list li::before { content: '·'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .doc-list li.optional { color: var(--text-muted); }
+  .doc-note { margin-top: 10px; font-size: 12px; color: var(--text-muted); }
+  .doc-note code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-family: monospace; color: #333; font-size: 11px; }
+
+  /* benefits */
+  .benefit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .benefit-item {
+    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 12px 14px; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .benefit-icon { font-size: 18px; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+  .benefit-title { font-size: 13px; font-weight: 600; margin-bottom: 2px; }
+  .benefit-desc { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+  /* contact */
+  .contact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .contact-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px; }
+  .contact-label { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+  .contact-val { font-size: 13px; font-weight: 600; }
+
+  /* footer cta */
+  .footer-cta { text-align: center; padding-top: 1rem; }
+  .footer-cta .btn { font-size: 15px; padding: 13px 36px; }
+  .footer-deadline { font-size: 12px; color: var(--text-muted); margin-top: 10px; }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 22px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .cat-grid, .docs-grid, .benefit-grid, .info-grid, .contact-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- poster placeholder -->
+  <div class="poster">
+    <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+    포스터 이미지가 여기에 들어갈 예정이에요
+  </div>
+
+  <div class="badge">2026 투자사업 모집공고</div>
+  <h1>제주창조경제혁신센터<br>Seed Money 투자사업</h1>
+  <p class="lead">스타트업 초기 성장단계부터 시리즈까지 — 제주센터가 함께합니다.</p>
+
+  <div class="cta-wrap">
+    <a class="btn" href="https://forms.gle/SXCRHx1HQmzx6XE99" target="_blank">
+      <svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      지금 바로 신청하기
+    </a>
+    <span class="deadline">접수 마감 <strong>2026년 4월 24일(금) 16:00</strong></span>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="metric-label">투자규모</div><div class="metric-value">1억원 내외</div></div>
+    <div class="metric"><div class="metric-label">모집 기업 수</div><div class="metric-value">3개사 내외</div></div>
+    <div class="metric"><div class="metric-label">접수기간</div><div class="metric-value">약 2주</div></div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="sec-title">운영 개요</div>
+    <div class="info-grid">
+      <div class="info-item"><div class="info-key">운영기간</div><div class="info-val">2026년 4월 ~ 7월</div></div>
+      <div class="info-item"><div class="info-key">투자방법</div><div class="info-val">신주투자(보통주) 또는 조건부지분투자</div></div>
+      <div class="info-item"><div class="info-key">공고일</div><div class="info-val">2026. 4. 10.(금)</div></div>
+      <div class="info-item"><div class="info-key">접수 마감</div><div class="info-val">2026. 4. 24.(금) 16:00</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">모집 분야</div>
+    <div class="cat-grid">
+      <div class="cat-item"><span class="cat-num">01</span>우주·항공</div>
+      <div class="cat-item"><span class="cat-num">02</span>해양</div>
+      <div class="cat-item"><span class="cat-num">03</span>친환경·에너지</div>
+      <div class="cat-item"><span class="cat-num">04</span>AI·빅데이터</div>
+      <div class="cat-item"><span class="cat-num">05</span>로컬 기반·로컬 특화사업</div>
+      <div class="cat-item"><span class="cat-num">06</span>기타 사업성 높은 스타트업</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">신청 자격</div>
+    <ul class="elig-list">
+      <li>투자유치 계획 및 의향이 있는 우수 스타트업</li>
+      <li>제주도 내·외 스타트업 모두 지원 가능</li>
+      <li>기술력·사업성·시장검증 가능성 및 성장성을 보유한 팀</li>
+      <li>TIPS 등 후속연계를 함께 희망하는 스타트업</li>
+    </ul>
+    <div class="notice">⚠️ 공서양속에 위반되는 사업 및 사업자등록증이 없는 기업은 신청 불가</div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">투자 절차 & 일정</div>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">4월 10일 ~ 24일</div><div class="tl-label">모집 및 접수</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">5월 중순</div><div class="tl-label">예비투자심의위원회 및 결과발표</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">5월 하순 ~ 6월 초순</div><div class="tl-label">현장실사 및 인터뷰</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">6월 중순</div><div class="tl-label">본투자심의위원회 및 결과발표</div><div class="tl-note">⚠️ 오프라인 진행 — 현장 참여 불가 시 불이익 있을 수 있음</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">6월 중순 ~ 하순</div><div class="tl-label">투자조건·밸류에이션 협상 및 이사회</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">7월 중</div><div class="tl-label">계약 체결 및 투자금 납입</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">제출 서류</div>
+    <div class="docs-grid">
+      <div class="doc-card">
+        <div class="doc-card-title">법인사업자</div>
+        <ul class="doc-list">
+          <li>제출서류 체크리스트 (서식-1)</li>
+          <li>투자심의 검토자료 (서식-2)</li>
+          <li>회사소개서 — IR자료·조직도 포함, PDF</li>
+          <li>주민등록등본 (대표자, 뒷자리 마스킹)</li>
+          <li>사업자등록증명 — 3월 1일 이후 발급</li>
+          <li>법인등기부등본 — 3월 1일 이후 발급</li>
+          <li>4대보험 가입자 명부 — 3월 이후 발급</li>
+          <li>주주명부 — 3월 이후 발급</li>
+          <li>정관</li>
+          <li>재무제표 / 손익계산서 (최근 3개년)</li>
+          <li class="optional">(해당 시) 창업·벤처·중소기업 확인서</li>
+        </ul>
+      </div>
+      <div class="doc-card">
+        <div class="doc-card-title">개인사업자</div>
+        <ul class="doc-list">
+          <li>제출서류 체크리스트 (서식-1)</li>
+          <li>투자심의 검토자료 (서식-2)</li>
+          <li>회사소개서 — IR자료·조직도 포함, PDF</li>
+          <li>주민등록등본 (대표자, 뒷자리 마스킹)</li>
+          <li>사업자등록증 — 3월 1일 이후 발급</li>
+          <li class="optional">(해당 시) 4대보험 가입자 명부</li>
+          <li class="optional">(해당 시) 부가세과세표준증명원 (3개년)</li>
+        </ul>
+      </div>
+    </div>
+    <p class="doc-note">📦 파일명: <code>기업명_신청서류.zip</code> 으로 압축 후 제출 — 서류 순번 정렬 필수</p>
+  </div>
+
+  <div class="section">
+    <div class="sec-title">선정 시 지원 혜택</div>
+    <div class="benefit-grid">
+      <div class="benefit-item"><div class="benefit-icon">💰</div><div><div class="benefit-title">투자자금</div><div class="benefit-desc">기업당 1억원 내외 직접 투자</div></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🚀</div><div><div class="benefit-title">TIPS 연계</div><div class="benefit-desc">Pre-TIPS / TIPS 프로그램 후속 연계</div></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🌏</div><div><div class="benefit-title">글로벌 진출</div><div class="benefit-desc">글로벌 진출 프로그램 연계 지원</div></div></div>
+      <div class="benefit-item"><div class="benefit-icon">🏢</div><div><div class="benefit-title">사무공간 제공</div><div class="benefit-desc">제주센터 내 고정·비고정 오피스 지원</div></div></div>
+      <div class="benefit-item"><div class="benefit-icon">📍</div><div><div class="benefit-title">주소지 지원</div><div class="benefit-desc">본사·지사 주소지 지원 (필요 시)</div></div></div>
+      <div class="benefit-item"><div class="benefit-icon">📋</div><div><div class="benefit-title">컨설팅 연계</div><div class="benefit-desc">재무·법률 컨설팅 및 IR 연계</div></div></div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="section">
+    <div class="sec-title">문의처</div>
+    <div class="contact-row">
+      <div class="contact-item"><div class="contact-label">담당팀</div><div class="contact-val">투자성장본부 투자운용팀</div></div>
+      <div class="contact-item"><div class="contact-label">직통전화</div><div class="contact-val">064-710-1963</div></div>
+      <div class="contact-item"><div class="contact-label">이메일</div><div class="contact-val">hyeonjik16@ccei.kr</div></div>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <a class="btn" href="https://forms.gle/SXCRHx1HQmzx6XE99" target="_blank">
+      <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      신청하러 가기
+    </a>
+    <p class="footer-deadline">마감: 2026년 4월 24일(금) 오후 4시</p>
+  </div>
+
+</div>
+</body>
+</html>
